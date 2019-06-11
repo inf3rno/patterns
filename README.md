@@ -7,13 +7,13 @@ npm install @inf3rno/patterns
 ```
 
 ```js
-var patterns = require("@inf3rno/patterns");
+var p = require("@inf3rno/patterns");
 ```
 
 **quote**
 ```js
-var quotedPatternFragment = patterns.quote("a-z");
-var pattern = patterns.compile(quotedPatternFragment);
-console.log(pattern.match("a-z")); // {value:"a-z"}
-console.log(pattern.match("abc")); // undefined
+var azPattern = p.quote("a-z");
+var azMatcher = p.compile(azPattern);
+console.log(azMatcher.findNext("a-z")); // {value:[]}
+console.log(azMatcher.findNext("abc")); // undefined
 ```

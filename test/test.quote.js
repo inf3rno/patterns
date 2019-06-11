@@ -3,11 +3,12 @@ const patterns = require("..");
 
 describe("quote", function () {
 
-    it("should escape special characters in the given string", function () {
-        var specialCharacters = "\\^${}[]().*+?|-/";
-        var specialCharactersFinder = patterns.compile(patterns.quote(specialCharacters));
-        expect(specialCharactersFinder.match(specialCharacters).value).to.equal(specialCharacters);
-        expect(specialCharactersFinder.match("abcdef")).to.equal(undefined);
+    it("should escape regex control characters in the given string", function () {
+        var listOfRegexControlCharacters = "\\^${}[]().*+?|-/";
+        var regexControlCharacterListPattern = patterns.quote(listOfRegexControlCharacters);
+        var regexControlCharacterListMatcher = patterns.compile(regexControlCharacterListPattern);
+        expect(!!(regexControlCharacterListMatcher.findNext(listOfRegexControlCharacters))).to.equal(true);
+        expect(regexControlCharacterListMatcher.findNext("abcdef")).to.equal(undefined);
     });
 
 });

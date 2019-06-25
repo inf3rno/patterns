@@ -7,17 +7,16 @@ npm install @inf3rno/patterns
 ```
 
 ```js
-var p = require("@inf3rno/patterns");
+var p = require("@inf3rno/patterns"),
+    t = p.transformations;
 ```
 
 **literal**
 
 Takes the given string literally and creates a pattern from it.
 ```js
-var azPattern = p.literal("a-z");
-var azMatcher = p.compile(azPattern);
-console.log(azMatcher.findNext("a-z")); // {Match object}
+var azPattern = p.literal("[a-z]+"); // we take the given string literally, it will be regex escaped
+var azMatcher = p.compile(azPattern, t.none); // we don't capture any value, so we can use t.none
+console.log(azMatcher.findNext("[a-z]+")); // Matcher {value: undefined, position: 0, length: 6, followingPosition: 6}
 console.log(azMatcher.findNext("abc")); // undefined
 ```
-*Note: you cannot inject regex code directly in this lib, you can only generate it.*
-

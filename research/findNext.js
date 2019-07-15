@@ -7,7 +7,8 @@ function findNext(regex, string, position){
             regex: regex,
             position: position,
             match: match[0],
-            range: {from: match.index, to: regex.lastIndex, size: match[0].length}
+            range: {from: match.index, to: regex.lastIndex, size: match[0].length},
+            groups: match.slice(1)
         };
     else
         return {

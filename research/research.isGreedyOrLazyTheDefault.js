@@ -1,0 +1,15 @@
+console.log("we use the `s` flag in this research, it was added in ES 2018");
+
+var findNext = require("./findNext");
+
+var lineByLineParserDefault = /(.*),\n/gs;
+var lineByLineParserLazy = /(.*?),\n/gs;
+//var lineByLineParserGreedy = /(.*+),\n/g;
+console.log("the `.*+` is not valid syntax, I don't know why I remembered that I need this syntax for greediness");
+
+var aJSONWithoutLineBreaksInString = '123,\n"Lorem, ipsum.",\n"blabla",\n';
+
+console.log("default", findNext(lineByLineParserDefault, aJSONWithoutLineBreaksInString, 0));
+console.log("lazy", findNext(lineByLineParserLazy, aJSONWithoutLineBreaksInString, 0));
+
+console.log("as we can see here the greedy is the default and we can turn on lazy mode with `.*?`");

@@ -1,1 +1,0 @@
-# Researches related to the library

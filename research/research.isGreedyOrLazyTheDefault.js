@@ -4,8 +4,6 @@ var findNext = require("./findNext");
 
 var lineByLineParserDefault = /(.*),\n/gs;
 var lineByLineParserLazy = /(.*?),\n/gs;
-//var lineByLineParserGreedy = /(.*+),\n/g;
-console.log("the `.*+` is not valid syntax, I don't know why I remembered that I need this syntax for greediness");
 
 var aJSONWithoutLineBreaksInString = '123,\n"Lorem, ipsum.",\n"blabla",\n';
 

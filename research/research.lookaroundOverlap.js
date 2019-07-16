@@ -36,3 +36,9 @@ console.log("lookbehind", findNext(lookbehindBeforePreviousMatchPattern, string3
 console.log("lookbehindBeforePreviousLookbehind", findNext(lookbehindBeforePreviousMatchPattern, string3, 3));
 
 console.log("it is possible to have a lookbehind before the lookbehind of a previous match");
+
+var string4 = "bac";
+var lookbehindStartsBeforePreviousPatternChunk = /a(?<=ba)c/g;
+console.log("lookbehindStartsBeforePreviousPatternChunk", findNext(lookbehindStartsBeforePreviousPatternChunk, string4, 0));
+
+console.log("it is possible to start a lookbehind before the previous pattern chunk, but it should cover the previous chunk too");

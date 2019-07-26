@@ -1,6 +1,6 @@
 console.log("we use the `s` flag in this research, it was added in ES 2018");
 
-var findNext = require("./findNext");
+var findNext = require("./util.findNext");
 
 var lineByLineParserDefault = /(.*),\n/gs;
 var lineByLineParserLazy = /(.*?),\n/gs;

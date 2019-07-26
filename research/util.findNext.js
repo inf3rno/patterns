@@ -1,4 +1,6 @@
 function findNext(regex, string, position){
+    if (regex === undefined || string === undefined || position === undefined)
+        throw new Error("Missing argument(s).");
     regex.lastIndex = position;
     var match = regex.exec(string);
     if (match)

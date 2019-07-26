@@ -1,6 +1,6 @@
 console.log("we use lookbehind in this research, it was added in ES 2018");
 
-var findNext = require("./findNext");
+var findNext = require("./util.findNext");
 
 var positiveLookahead = /\d(?=\d)/g;
 var negativeLookahead = /\d(?!\d)/g;
